@@ -158,10 +158,12 @@ html:hover{
 
   --color-20: #d62828;
   --color-20-dark: #5a0a0a;
+  
+  --color-30: #33ca7f;
 
   --color-50: #446df6;
+  --color-50-dark: #2243af;
 
-  --color-60: #33ca7f;
 
   --color-70: #f77f00;
   --color-70-dark: #5e3101;
@@ -171,6 +173,7 @@ html:hover{
 
   --color-90: #eae2b7;
 
+  --color-750: #fff;
   --color-800: #f8f9fa;
   --color-810: #e9ecef;
   --color-820: #dee2e6;
@@ -180,6 +183,7 @@ html:hover{
   --color-860: #495057;
   --color-870: #343a40;
   --color-880: #212529;
+  --color-950: #000;
 
   /*  */
 
@@ -187,9 +191,6 @@ html:hover{
   --color-facebook: #3b5998;
   --color-netflix: #d61319;
   --color-kakao: #fee101;
-
-  --main-color: #fee101;
-  --second-color: #d61319;
 
   --color-red: #e01541;
   --color-blue: #446df6;
