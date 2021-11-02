@@ -160,6 +160,7 @@ html:hover{
   --color-20-dark: #5a0a0a;
 
   --color-50: #446df6;
+  --color-50-dark: #2244b3;
 
   --color-60: #33ca7f;
 
@@ -427,10 +428,10 @@ td {
 
 .myButton {
   box-shadow: 0px 1px 0px 0px #f0f7fa;
-  background: linear-gradient(to bottom, #33bdef 5%, #019ad2 100%);
-  background-color: #33bdef;
+  background: linear-gradient(to bottom, var(--color-50) 5%, var(--color-50-dark) 100%);
+  background-color: var(--color-50);
   border-radius: 6px;
-  border: 1px solid #057fd0;
+  border: 1px solid var(--color-50);
   display: inline-block;
   cursor: pointer;
   color: #ffffff;
@@ -442,8 +443,8 @@ td {
   text-shadow: 0px -1px 0px #5b6178;
 }
 .myButton:hover {
-  background: linear-gradient(to bottom, #019ad2 5%, #33bdef 100%);
-  background-color: #019ad2;
+  background: linear-gradient(to bottom, var(--color-50-dark) 5%, var(--color-50) 100%);
+  background-color: var(--color-50-dark);
 }
 .myButton:active {
   position: relative;
