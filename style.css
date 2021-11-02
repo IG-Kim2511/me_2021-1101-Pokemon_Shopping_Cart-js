@@ -1,3 +1,4 @@
+/* 🍀 */
 .main-nav {
     background-color: var(--color-850);
 
@@ -22,5 +23,37 @@
     background-color: var(--color-50)
 }
 
+/* 🍀 */
 
+.shop_items{
+    width: 999px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 
+    align-content: center;
+
+    border: 1px solid red;
+    margin: auto;
+    padding: 2rem;
+}
+.shop_item{
+    
+    background-color: yellow;
+
+    width: 450px;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.shop_item-details{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.shop_item-details div{
+    margin: 0 3rem;
+}
