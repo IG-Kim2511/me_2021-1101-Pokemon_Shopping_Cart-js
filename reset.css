@@ -1,0 +1,546 @@
+/* 🍀ready- Global */
+
+/* 🚀🦄공식
+
+🍀
+.기본적으로 코딩하는 순서{
+    1. 백그라운드, width, height 넣음
+
+    background-color: aliceblue;
+    width: 100px;
+    height: 100px;
+
+    2. position 넣음
+
+    position: absolute;
+    left: 10;
+    bottom: 0;
+
+    3. 나머지 코딩
+
+    background-repeat: no-repeat;
+    background-position: 50% 100%;
+    background-size: contain;
+
+    
+    transition: 0.5s;
+}
+
+
+🍀
+ width: calc(1*2*100%); 
+
+--base: 1rem;
+--sm: calc(var(--base) * 1.5);
+
+🍀
+.transform{
+  transform: translateX(1px) translate3d(10%,20%,50%) scaleX(2);
+  
+  transform-origin: 10% 20%;  
+}
+
+🍀
+.transition{
+  transition: all 1s linear;
+}
+.transition:hover{
+  transform: rotateY( 45deg);
+}
+
+
+🍀
+.animation{
+  animation: name duration timing-function delay iteration-count direction fill-mode;
+  animation: name 3s linear infinite reverse;
+}
+
+🍀
+.perspective{  
+  transform: perspective(500px)  rotateY( 45deg);
+}
+
+🍀
+.perspective2{
+  perspective: 1000px;
+}
+
+.perspective2-son{
+  transform-style: preserve-3d;
+}
+
+.perspective2-grandson{
+  transform: rotateY( 45deg);
+}
+
+🍀
+.backface-visibility{
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+🍀박스 마우스 중앙정렬
+.center{
+  width: 100px;
+  height: 150px;
+  margin: -75px 0 0 -50px; ⚡margin으로 왼쪽위로 이동시킴
+}
+
+
+🍀flex
+.container{
+  height: 80vh;    
+
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+.item{
+  padding: 2em;
+  border: 3px solid black;
+
+  flex-grow: 1; ⚡ item div에 코딩함
+  flex-basis: 0; ⚡ 박스안의 text길이 무시하기
+  
+}
+
+⚡nth-child, flex-grow로 각 박스크기 설정하기
+.item:nth-child(1) {flex-grow: 1;}
+.item:nth-child(2) {flex-grow: 5;}
+.item:nth-child(3) {flex-grow: 2;}
+.item:nth-child(4) {flex-grow: 3;}
+.item:nth-child(5) {flex-grow: 1;}
+
+
+🍀layout
+🍉왼쪽, 오른쪽에 빈칸
+padding-right: 2rem
+
+🍉왼쪽, 오른쪽에 붙이는 layout>
+
+margin-left: auto;
+
+🍉가운데 정렬  공식
+display: block;
+margin: auto;
+
+🍉
+position: absolute;
+left: 0;
+right: 0;
+margin: auto;
+width: ~~~ px;
+
+🍉
+position: absolute;
+left: 50%;
+transform: translateX(-50%);
+*/
+
+/*🍀test: color, hover for javascript effect
+
+html{
+  color: yellow;
+  }
+
+html:hover{
+  color:yellow;
+}
+*/
+
+:root {
+  /* color */
+  --color-10: #003049;
+  --color-10-dark: #01111a;
+
+  --color-20: #d62828;
+  --color-20-dark: #5a0a0a;
+
+  --color-50: #446df6;
+
+  --color-60: #33ca7f;
+
+  --color-70: #f77f00;
+  --color-70-dark: #5e3101;
+
+  --color-80: #fcbf49;
+  --color-80-dark: #a8740c;
+
+  --color-90: #eae2b7;
+
+  --color-800: #f8f9fa;
+  --color-810: #e9ecef;
+  --color-820: #dee2e6;
+  --color-830: #ced4da;
+  --color-840: #adb5bd;
+  --color-850: #6c757d;
+  --color-860: #495057;
+  --color-870: #343a40;
+  --color-880: #212529;
+
+  /*  */
+
+  --color-naver: #0eae44;
+  --color-facebook: #3b5998;
+  --color-netflix: #d61319;
+  --color-kakao: #fee101;
+
+  --main-color: #fee101;
+  --second-color: #d61319;
+
+  --color-red: #e01541;
+  --color-blue: #446df6;
+  --color-green: #33ca7f;
+
+  --color-black: #000;
+
+  --color-grey: #555;
+  --color-grey-light1: #777;
+  --color-grey-light2: #aaa;
+
+  --color-white-darker: #eee;
+  --color-white: #fff;
+
+  /* 
+    --color-white: #ffffff;
+    --color-light-white: #f3f3f3;
+    --color-light2-white: #eeeeee;
+    --color-dark-white: #bdbdbd;
+  
+    --color-black: #000000;
+    --color-grey: #616161;
+    --color-dark-grey: #4d4d4d;
+    --color-light-grey: #7c7979; 
+    */
+
+  --shadow: 0 2rem 3rem #777;
+
+  /* color sample
+      background-color: gainsboro;
+      background-color: ghostwhite;
+      background-color: aliceblue;
+    */
+
+  /* size */
+  --base: 1rem;
+  --sm: calc(var(--base) * 1.5);
+  --med: calc(var(--base) * 3);
+  --large: calc(var(--base) * 5);
+
+  /* border-radius :basic 4px=0.25rem  */
+  --border-radius-4px: 0.3rem;
+
+  /* Animation :basic 300ms=0.3s  */
+  --animation_basic-duration-300ms: 300ms;
+
+  /* letterspacing : basic 0.1rem */
+  --letterspacing-basic: 0.1rem;
+}
+
+/*🍀Universal tags */
+
+html {
+  /* scroll부드럽게 ( + html : <a href="#~~~~"></a> 써야함) */
+  scroll-behavior: smooth;
+
+  font-size: 100%;
+}
+
+body {
+  /* font-family: "Open Sans", sans-serif; */
+  /* max-width: 1000px; */
+  text-align: center;
+  margin: auto;
+  padding: 0 auto;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box; /* margin의 기준선이 border를 기준으로  만들어짐 */
+
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+li {
+  list-style: none;
+}
+
+/* ??!! span의 좁은 블럭 설정 바꾸기
+  
+  block: div : 한줄 전체를 차지함
+  inline: span: 한칸만 차지. padding등 스타일을 넣어도 영향안받음
+  inline-block: 한칸만 차지. 스타일 영향받음 good
+  
+  span{
+    display: inline-block;
+  } */
+
+/* 🍀 table : 🚀 table -center align */
+table {
+  width: 100%;
+  /* border-collapse: collapse; */
+}
+
+th,
+td {
+  text-align: center;
+  vertical-align: middle;
+
+  /*   width: 20%;
+    text-align: right; */
+}
+
+/* 🍀Utility class */
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.display-none {
+  display: none;
+}
+
+.display-block {
+  display: block;
+}
+
+.opacity {
+  opacity: 1 !important;
+}
+
+.overflow {
+  overflow: hidden;
+}
+
+.pointer-events {
+  pointer-events: none;
+  /* pointer-events: auto; */
+}
+
+.relative {
+  position: relative;
+}
+
+.transforming {
+  transition: transform 0.5s;
+}
+
+/* 🦄grid -me */
+/* html :  
+    <form id="parent">
+        <div class="formLine left grid-a">
+    </form>
+  */
+
+#parent {
+  display: grid;
+
+  grid-template-areas:
+    "a b"
+    "c d"
+    ". e"
+    ". f";
+
+  /* 
+    🍀grid : 아무 알파벳 넣고, 설정안해도 그대로 그리드 만들어짐 
+      grid-template-areas:
+      "o p q  "
+      "s t a  "
+      "u v c  "
+      "w x e ";
+    */
+
+  gap: 2.5%;
+
+  /*🍀grid: img 가운데 정렬 in the container */
+  justify-items: center;
+  align-items: center;
+}
+
+.grid-a {
+  grid-area: a;
+}
+.grid-b {
+  grid-area: b;
+}
+.grid-c {
+  grid-area: c;
+}
+.grid-d {
+  grid-area: d;
+}
+.grid-e {
+  grid-area: e;
+}
+.grid-f {
+  grid-area: f;
+}
+
+/* 🦄grid- the other way  */
+/*
+  columns 16칸 (line으로 따지면 1~17)
+  row 6칸 (line으로 따지면 1~7)만듬
+  */
+.parent {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(16, 1fr);
+  grid-template-rows: repeat(6, 6rem);
+  grid-row-gap: 4rem;
+}
+
+/* column line 7~11, row line 2~6 영역을차지함*/
+.about-us-img-wrapper {
+  grid-column: 7 / 11;
+  grid-row: 2 / 6;
+  width: 100%;
+}
+
+.service:nth-child(1) {
+  grid-column: 4 / 7;
+  grid-row: 1 / 3;
+}
+
+/* 🍀myBtn, button  
+  btn-generator 보기좋게 정리한 것 
+  https://www.bestcssbuttongenerator.com/#/13
+  */
+
+.myButton {
+  box-shadow: 0px 1px 0px 0px #f0f7fa;
+  background: linear-gradient(to bottom, #33bdef 5%, #019ad2 100%);
+  background-color: #33bdef;
+  border-radius: 6px;
+  border: 1px solid #057fd0;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 6px 24px;
+  text-decoration: none;
+  text-shadow: 0px -1px 0px #5b6178;
+}
+.myButton:hover {
+  background: linear-gradient(to bottom, #019ad2 5%, #33bdef 100%);
+  background-color: #019ad2;
+}
+.myButton:active {
+  position: relative;
+  top: 1px;
+}
+
+/* btn-generator - 필수기능만 간추린것 */
+
+.btn-me {
+  background: linear-gradient(to bottom, #33bdef 5%, #019ad2 100%);
+  width: 4rem;
+
+  border-radius: 0.5rem;
+  box-shadow: 0px 1px 0px 0px #f0f7fa;
+  cursor: pointer;
+}
+.btn-me:hover {
+  background: linear-gradient(to bottom, #019ad2 5%, #33bdef 100%);
+  background-color: #019ad2;
+}
+
+.btn-me:active {
+  position: relative;
+  top: 1px;
+}
+
+/*🍀transparent button  */
+.myButton-empty {
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+}
+
+/* 🍀 start coding
+  - Navbar */
+#navbar {
+  color: var(--color-black);
+}
+
+/* 🍀 keyframs */
+
+/* <logo> */
+.logo_container {
+  position: relative;
+}
+.logo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -8rem;
+}
+
+.logo_empty {
+  margin-top: 10rem;
+}
+
+.logo h1 {
+  display: flex;
+}
+
+.logo h1 span {
+  font-size: 2rem;
+
+  font-weight: 900;
+  color: var(--color-naver);
+  text-transform: uppercase;
+  margin: 0.5rem;
+  border-radius: 50%;
+
+  /*   */
+}
+
+/* T: keyframes */
+
+.logo h1 span:nth-child(1) {
+  animation: drop 30s 1s infinite;
+}
+.logo h1 span:nth-child(2) {
+  animation: drop 30s 5s infinite;
+}
+.logo h1 span:nth-child(3) {
+  animation: drop 30s 10s infinite;
+}
+
+@keyframes drop {
+  0% {
+    transform: translateY(0);
+  }
+
+  20% {
+    transform: translatey(-50%);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}

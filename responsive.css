@@ -1,0 +1,45 @@
+  /* 🍀 [responsive] for below 768px screen width */
+  
+  /*🚀 breakpoint
+  1200px : pc⚡
+  992px : Tablet  ⚡⚡⚡기준
+  (768px : Tablet or phone)
+  576px : phone⚡
+  */
+  
+  /* me : 
+  992px : Tablet 기준으로 작업하고, 
+  576px: phone - responsive 추가
+  1200px : pc- responsive 추가
+  
+  (1200px : pc  
+  @media (min-width: 1200px) {  
+    max-width: 1200px
+    margin: auto;
+  */
+  
+  /* @ 768px */
+  @media (max-width: 768px) {
+    :root {
+    }
+  
+    html {
+      font-size: 70%;
+    }
+  }
+  
+  /* @ 576px */
+  @media (max-width: 576px) {
+    html {
+      font-size: 55%;
+    }
+  }
+  
+  /* @ 1200px */
+  @media (min-width: 1200px) {
+    #skills,
+    #language {
+      max-width: 1200px;
+      margin: auto;
+    }
+  }
