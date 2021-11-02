@@ -1,4 +1,15 @@
 /* 🍀 */
+
+.container{
+    margin: 5rem 0;
+}
+/* 🍀 */
+.first-title{
+
+    font-size: 2rem;
+}
+
+
 .main-nav {
     background-color: var(--color-850);
 
@@ -56,4 +67,30 @@
 }
 .shop_item-details div{
     margin: 0 3rem;
+}
+
+/* 🍀 flex로 table처럼 만듬 */
+.cart-row{
+    display: flex;
+}
+
+.cart-column{
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--color-880);
+    margin-right: 1.5rem;
+    margin-top: 10px;
+    padding-bottom: 10px;
+}
+
+.cart-item{
+    width: 45%; /* css10 */
+}
+
+.cart-price{
+    width: 20%; /* css10 */
+}
+
+.cart-quantity{
+    width: 35%; /* css10 */
 }
