@@ -7,9 +7,5 @@ let position = {x:0, y:0};
 
 // 🍀const : 기본 element
 
-const todoContainer = document.querySelector('.todo_container');
-const inputBox = document.querySelector('.input_box');
-const submitBtn = document.querySelector('.submit');
-
-let windowsContainer = document.querySelector('.windows_container');
-let covidWindow = document.querySelector('.covid_window');
+const shopItemBtnAll = document.querySelectorAll('.shop-item-btn');
+console.log(shopItemBtnAll)
