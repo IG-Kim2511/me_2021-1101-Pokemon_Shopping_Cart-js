@@ -44,26 +44,30 @@
 
     align-content: center;
 
-    border: 1px solid red;
     margin: auto;
     padding: 2rem;
 }
-.shop_item{
-    
-    background-color: yellow;
-
-    width: 450px;
+.shop_item{    
+    width: 450px;    
     
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin: 3rem 0;
+}
+
+.shop_item-title,
+.shop_item-price{
+    font-weight: 900;
 }
 
 .shop_item-details{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+
+    margin-top: 1rem;
 }
 .shop_item-details div{
     margin: 0 3rem;
@@ -93,4 +97,20 @@
 
 .cart-quantity{
     width: 35%; /* css10 */
+}
+
+/* js */
+
+/* .cart-total */
+.cart-total{
+    text-align: end;
+    margin-top: 1rem;
+    margin-right: 1.5rem;
+
+    font-size: 2rem;
+}
+
+.btn-purchase{
+    padding: 2rem 10rem;
+    margin-top: 5rem;
 }
