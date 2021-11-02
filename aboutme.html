@@ -1,28 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header class="main-header">
-        <nav class="main-nav nav">
-          <ul>
-            <li><a href="./index.html">HOME</a></li>
-            <li><a href="./aboutme.html">aboutme</a></li>
-          </ul>
-        </nav>
-      </header>
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
 
-      <div>
-          about me
-      </div>
-  
-    <script src="./variable.js"></script>
-    <script src="./script.js"></script>
-</body>
+    <style>
+      /* .link_myhome {
+        margin-top: 3rem;
+      }
+      .home__contact,
+      .my_github {
+        border: 2px solid var(--color-880);
+        border-radius: 0.5rem;
+        color: var(--color-880);
+
+        margin: 12px;
+        padding: 8px 12px;
+      }
+      .home__contact:hover,
+      .my_github:hover {
+        background-color: var(--color-60);
+        transform: scale(1.1);
+      } */
+
+      .link_myhome {
+        padding: 10rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="main-header">
+      <nav class="main-nav nav">
+        <ul>
+          <li><a href="./index.html">HOME</a></li>
+          <li><a href="./aboutme.html">aboutme</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="link_myhome">
+      <a
+        class="my_github myButton"
+        href="https://github.com/IG-Kim2511"
+        target="_blank"
+        >my github</a
+      >
+      <a
+        class="my_github myButton"
+        href="https://www.linkedin.com/in/ig-in-gyum-kim-17456219b/"
+        target="_blank"
+        >linkedin</a
+      >
+      <a
+        class="home__contact myButton"
+        href="https://ig-kim2511.github.io/Portfolio-me-2021-0712/"
+        target="_blank"
+        >Portfolio</a
+      >
+    </div>
+  </body>
 </html>
