@@ -113,11 +113,13 @@
 
 /* .cart-total */
 .cart-total{
-    text-align: end;
+    
     margin-top: 1rem;
-    margin-right: 1.5rem;
+    /* margin-right: 1.5rem; */
 
     font-size: 2rem;
+
+    transform: translateX(10rem);
 }
 
 .cart-quantity-input{
