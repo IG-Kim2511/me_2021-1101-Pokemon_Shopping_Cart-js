@@ -1,5 +1,11 @@
 "use strict";
 
+/* 🍚
+when same item already is there , just QTY adding
+
+when increase QTY, increase price on list
+*/
+
 document.addEventListener('DOMContentLoaded',init);
 
 
@@ -78,13 +84,14 @@ function addItemToCart(title,price,imgSrc) {
     // 🍖
     cartRow.querySelector('.cart-quantity-input').addEventListener('click',quantityChanged)
         
-    }
+}
 
-// 🍀updateCartTotal
+// 🍀1102-30. updateCartTotal  (add, remove 모두 적용됨)...........🦄
 
 function updateCartTotal() {
     let cartItemContainer = document.querySelector('.cart-items');
     let cartRows = cartItemContainer.querySelectorAll('.cart-row');
+
     let total = 0;
 
     for (let i = 0; i < cartRows.length; i++) {
