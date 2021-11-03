@@ -46,6 +46,7 @@
 
     margin: auto;
     padding: 2rem;
+
 }
 .shop_item{    
     width: 450px;    
@@ -99,6 +100,8 @@
     width: 35%; /* css10 */
 }
 
+
+
 /* js */
 
 /* .cart-total */
@@ -110,7 +113,35 @@
     font-size: 2rem;
 }
 
+.cart-quantity-input{
+    height: 34px;
+    width: 50px;
+    border-radius: 5px;
+     background-color: var(--color-820);
+    color: #333;
+    padding: 0;
+    text-align: center;
+    font-size: 1.2em;
+    margin-right: 25px;
+}
+
+.btn-danger {
+    background: linear-gradient(to bottom, var(--color-20-dark) 5%, var(--color-20) 100%);
+font-size: 7px;
+  
+    border-radius: 0.5rem;
+    box-shadow: 0px 1px 0px 0px #f0f7fa;
+    cursor: pointer;
+
+    border: 1px solid transparent;
+}
+.btn-danger:hover {
+    background: linear-gradient(to bottom, var(--color-20) 5%, var(--color-20-dark) 100%);
+    background-color: var(--color-20);
+}
+
 .btn-purchase{
     padding: 2rem 10rem;
     margin-top: 5rem;
 }
+

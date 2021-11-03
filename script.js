@@ -132,6 +132,10 @@ function purchaseClicked() {
     
     let cartItems = document.querySelector('.cart-items');
     
+    // 🦄while
+    // 🦄hasChildNode
+    // 🦄removeChild
+    // 🦄firstChild
     while (cartItems.hasChildNodes()) {
         cartItems.removeChild(cartItems.firstChild)        
     }
