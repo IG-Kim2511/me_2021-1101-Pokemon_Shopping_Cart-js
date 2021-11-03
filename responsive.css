@@ -36,21 +36,13 @@
     }
     .shop_items{
       flex-direction: column;
-      width: 560px;
+      width: 500px;
     }
 
     .shop_item{    
       width: 350px;    
       
       flex-direction: column;
-/*       
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      margin: 3rem 0; */
-  }
-  
 
   }
   
