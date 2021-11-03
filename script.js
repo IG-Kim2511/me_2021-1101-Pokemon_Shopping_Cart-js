@@ -8,7 +8,6 @@ when increase QTY, increase price on list
 
 document.addEventListener('DOMContentLoaded',init);
 
-
 /* 🍄
     🦄1102-4. e.target의 특정 자식노드찾기 : for loop + querySelector
 
@@ -49,8 +48,8 @@ function addToCartClicked(e){
     addItemToCart(title,price,imgSrc);
 
     updateCartTotal()
-
 }
+
 
 //🍀1102-20 addItemToCart
 function addItemToCart(title,price,imgSrc) {
@@ -82,11 +81,15 @@ function addItemToCart(title,price,imgSrc) {
     cartRow.querySelector('.btn-danger').addEventListener('click',removeCartItem)
 
     // 🍖
-    cartRow.querySelector('.cart-quantity-input').addEventListener('click',quantityChanged)
-        
+    cartRow.querySelector('.cart-quantity-input').addEventListener('click',quantityChanged)        
 }
 
+
 // 🍀1102-30. updateCartTotal  (add, remove 모두 적용됨)...........🦄
+/* 🍄 🦄
+    cart-row 안의  items * quantity
+    cart-row [0], cart-row [1], cart-row [2]..... 실행
+*/
 
 function updateCartTotal() {
     let cartItemContainer = document.querySelector('.cart-items');
@@ -112,13 +115,13 @@ function updateCartTotal() {
     //🦄parseFloat(~).toFixed(~), 소수점 ~자리까지
     total = parseFloat(total).toFixed(2)
 
-     document.querySelector('.cart-total-price').innerText = "$" + total;
-    
+     document.querySelector('.cart-total-price').innerText = "$" + total;   
 }
 
 // removeCartItem
 function removeCartItem(e) {
     e.target.parentElement.parentElement.remove()
+
     updateCartTotal();
 }
 
@@ -128,8 +131,7 @@ function quantityChanged(e) {
     // 🦄isNaN(~) : number인지 확인
     if (isNaN(e.target.value) || e.target.value <=0) {
         e.target.value = 1;        
-    }
-    
+    }    
     updateCartTotal();
 }
 
@@ -147,6 +149,5 @@ function purchaseClicked() {
         cartItems.removeChild(cartItems.firstChild)        
     }
 
-    updateCartTotal();
-    
+    updateCartTotal();    
 }
