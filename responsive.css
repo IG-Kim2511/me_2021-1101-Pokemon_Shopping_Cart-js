@@ -23,9 +23,10 @@
     :root {
     }
   
-    html {
+    html {      
       font-size: 70%;
     }
+ 
   }
   
   /* @ 576px */
@@ -33,13 +34,15 @@
     html {
       font-size: 55%;
     }
+    .shop_items{
+      flex-direction: column;
+      width: 500px;
+    }
+
+    .shop_item{    
+      width: 350px;    
+      
+      flex-direction: column;
+
   }
   
-  /* @ 1200px */
-  @media (min-width: 1200px) {
-    #skills,
-    #language {
-      max-width: 1200px;
-      margin: auto;
-    }
-  }
