@@ -30,6 +30,12 @@
     .cart-section{      
       width: 755px;      
     }
+
+    .cart-item{
+      width: 30%; /* css10 */
+      padding-left: 3rem;
+  }
+  
   }
   
   /* @ 576px */

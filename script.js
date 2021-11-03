@@ -1,7 +1,12 @@
 "use strict";
 
-document.addEventListener('DOMContentLoaded',init);
+/* 🍚
+when same item already is there , just QTY adding
 
+when increase QTY, increase price on list
+*/
+
+document.addEventListener('DOMContentLoaded',init);
 
 /* 🍄
     🦄1102-4. e.target의 특정 자식노드찾기 : for loop + querySelector
@@ -43,16 +48,30 @@ function addToCartClicked(e){
     addItemToCart(title,price,imgSrc);
 
     updateCartTotal()
-
 }
 
-//🍀1102-20 addItemToCart
-function addItemToCart(title,price,imgSrc) {
 
+//🍀1102-20 addItemToCart
+function addItemToCart(title,price,imgSrc) { 
+
+    // 🍉1103-1. when same item already is there, alert and  return  ....🦄
+
+    let cartItemTitleAll = document.querySelectorAll('.cart-item-title')
+
+    for (let i = 0; i < cartItemTitleAll.length; i++) {
+        if (cartItemTitleAll[i].textContent == title) {
+
+            // parseFloat(cartQuantityInputAll[i].value) += 1;
+            alert('This item is already added to the cart')
+            return
+        }        
+    }
+
+    // 🍉innerHTML + append
     let cartRow = document.createElement('div')
     cartRow.classList.add('cart-row')
 
-    let cartRowContents =  `
+    cartRow.innerHTML =`
         <div class="cart-item cart-column">
             <img class="cart-item-image" src="${imgSrc}" width="100" height="100">
             <span class="cart-item-title">${title}</span>
@@ -63,28 +82,27 @@ function addItemToCart(title,price,imgSrc) {
             <button class="btn btn-danger myButton" type="button">REMOVE</button>
         </div>`
 
-    cartRow.innerHTML = cartRowContents;
+    document.querySelector(".cart-items").append(cartRow)
 
-    // 🍉            
-    let cartItems = document.querySelector(".cart-items");
-    // let cartItemsNames = cartItems.querySelector('.cart-item-title')
-    
-    cartItems.append(cartRow)
 
-    // 🍖
-    console.log(cartRow.querySelector('.btn-danger'))
+
+    // 🍖removeCartItem
     cartRow.querySelector('.btn-danger').addEventListener('click',removeCartItem)
 
-    // 🍖
-    cartRow.querySelector('.cart-quantity-input').addEventListener('click',quantityChanged)
-        
-    }
+    // 🍖quantityChanged
+    cartRow.querySelector('.cart-quantity-input').addEventListener('click',quantityChanged)        
+}
 
-// 🍀updateCartTotal
 
+// 🍀1102-30. updateCartTotal  (add, remove 모두 적용됨)...........🦄
+/* 🍄 🦄
+    cart-row 안의  items * quantity
+    cart-row [0], cart-row [1], cart-row [2]..... 실행
+*/
 function updateCartTotal() {
     let cartItemContainer = document.querySelector('.cart-items');
     let cartRows = cartItemContainer.querySelectorAll('.cart-row');
+
     let total = 0;
 
     for (let i = 0; i < cartRows.length; i++) {
@@ -93,11 +111,6 @@ function updateCartTotal() {
         // 🦄parseFloat , replace(~,~)
        let priceFix = parseFloat(price.innerText.replace('$',''));
        let quantity = cartRows[i].querySelector('.cart-quantity-input').value;
-
-       console.log(price)
-       console.log(priceFix)
-       console.log(typeof priceFix)
-       console.log(quantity)
         
        total = total + (priceFix * quantity);
     }
@@ -106,12 +119,12 @@ function updateCartTotal() {
     total = parseFloat(total).toFixed(2)
 
      document.querySelector('.cart-total-price').innerText = "$" + total;
-    
 }
 
 // removeCartItem
 function removeCartItem(e) {
     e.target.parentElement.parentElement.remove()
+
     updateCartTotal();
 }
 
@@ -120,9 +133,8 @@ function quantityChanged(e) {
     
     // 🦄isNaN(~) : number인지 확인
     if (isNaN(e.target.value) || e.target.value <=0) {
-        e.target.value = 1;        
-    }
-    
+        e.target.value = 1;
+    }    
     updateCartTotal();
 }
 
@@ -137,9 +149,8 @@ function purchaseClicked() {
     // 🦄removeChild
     // 🦄firstChild
     while (cartItems.hasChildNodes()) {
-        cartItems.removeChild(cartItems.firstChild)        
+        cartItems.removeChild(cartItems.firstChild);
     }
 
     updateCartTotal();
-    
 }
