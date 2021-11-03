@@ -52,12 +52,13 @@ function addToCartClicked(e){
 
 
 //🍀1102-20 addItemToCart
-function addItemToCart(title,price,imgSrc) {
+function addItemToCart(title,price,imgSrc) { 
 
+    // 🍉innerHTML + append
     let cartRow = document.createElement('div')
     cartRow.classList.add('cart-row')
 
-    let cartRowContents =  `
+    cartRow.innerHTML =`
         <div class="cart-item cart-column">
             <img class="cart-item-image" src="${imgSrc}" width="100" height="100">
             <span class="cart-item-title">${title}</span>
@@ -68,19 +69,12 @@ function addItemToCart(title,price,imgSrc) {
             <button class="btn btn-danger myButton" type="button">REMOVE</button>
         </div>`
 
-    cartRow.innerHTML = cartRowContents;
+    document.querySelector(".cart-items").append(cartRow)
 
-    // 🍉            
-    let cartItems = document.querySelector(".cart-items");
-    // let cartItemsNames = cartItems.querySelector('.cart-item-title')
-    
-    cartItems.append(cartRow)
-
-    // 🍖
-    console.log(cartRow.querySelector('.btn-danger'))
+    // 🍖removeCartItem
     cartRow.querySelector('.btn-danger').addEventListener('click',removeCartItem)
 
-    // 🍖
+    // 🍖quantityChanged
     cartRow.querySelector('.cart-quantity-input').addEventListener('click',quantityChanged)        
 }
 
@@ -90,7 +84,6 @@ function addItemToCart(title,price,imgSrc) {
     cart-row 안의  items * quantity
     cart-row [0], cart-row [1], cart-row [2]..... 실행
 */
-
 function updateCartTotal() {
     let cartItemContainer = document.querySelector('.cart-items');
     let cartRows = cartItemContainer.querySelectorAll('.cart-row');
@@ -103,11 +96,6 @@ function updateCartTotal() {
         // 🦄parseFloat , replace(~,~)
        let priceFix = parseFloat(price.innerText.replace('$',''));
        let quantity = cartRows[i].querySelector('.cart-quantity-input').value;
-
-       console.log(price)
-       console.log(priceFix)
-       console.log(typeof priceFix)
-       console.log(quantity)
         
        total = total + (priceFix * quantity);
     }
@@ -115,7 +103,7 @@ function updateCartTotal() {
     //🦄parseFloat(~).toFixed(~), 소수점 ~자리까지
     total = parseFloat(total).toFixed(2)
 
-     document.querySelector('.cart-total-price').innerText = "$" + total;   
+     document.querySelector('.cart-total-price').innerText = "$" + total;
 }
 
 // removeCartItem
@@ -130,7 +118,7 @@ function quantityChanged(e) {
     
     // 🦄isNaN(~) : number인지 확인
     if (isNaN(e.target.value) || e.target.value <=0) {
-        e.target.value = 1;        
+        e.target.value = 1;
     }    
     updateCartTotal();
 }
@@ -146,8 +134,8 @@ function purchaseClicked() {
     // 🦄removeChild
     // 🦄firstChild
     while (cartItems.hasChildNodes()) {
-        cartItems.removeChild(cartItems.firstChild)        
+        cartItems.removeChild(cartItems.firstChild);
     }
 
-    updateCartTotal();    
+    updateCartTotal();
 }
