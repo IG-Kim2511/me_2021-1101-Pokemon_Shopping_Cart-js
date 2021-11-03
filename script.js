@@ -31,8 +31,6 @@ function init() {
 
 /* 🍀1102-4 addToCartClicked*/
 function addToCartClicked(e){
-    console.log(e)  
-
     // 🦄parentElement
     // 🦄querySelector
     // 🦄src
@@ -84,13 +82,11 @@ function addItemToCart(title,price,imgSrc) {
 
     document.querySelector(".cart-items").append(cartRow)
 
-
-
     // 🍖removeCartItem
     cartRow.querySelector('.btn-danger').addEventListener('click',removeCartItem)
 
     // 🍖quantityChanged
-    cartRow.querySelector('.cart-quantity-input').addEventListener('click',quantityChanged)        
+    cartRow.querySelector('.cart-quantity-input').addEventListener('click',quantityChanged)    
 }
 
 
