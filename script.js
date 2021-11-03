@@ -54,10 +54,9 @@ function addToCartClicked(e){
 //🍀1102-20 addItemToCart
 function addItemToCart(title,price,imgSrc) { 
 
-    // 🍉1103-1. when same item already is there , just QTY adding
+    // 🍉1103-1. when same item already is there, alert and  return  ....🦄
 
     let cartItemTitleAll = document.querySelectorAll('.cart-item-title')
-    let cartQuantityInputAll = document.querySelectorAll('.cart-quantity-input')
 
     for (let i = 0; i < cartItemTitleAll.length; i++) {
         if (cartItemTitleAll[i].textContent == title) {
