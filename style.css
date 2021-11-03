@@ -75,6 +75,13 @@
 }
 
 /* 🍀 flex로 table처럼 만듬 */
+
+.cart-section{
+    background-color: yellow;
+    width: 900px;
+    margin: auto;
+}
+
 .cart-row{
     display: flex;
 }
@@ -90,6 +97,7 @@
 
 .cart-item{
     width: 45%; /* css10 */
+    padding-left: 5rem;
 }
 
 .cart-price{
@@ -127,7 +135,7 @@
 
 .btn-danger {
     background: linear-gradient(to bottom, var(--color-20-dark) 5%, var(--color-20) 100%);
-font-size: 7px;
+    font-size: 7px;
   
     border-radius: 0.5rem;
     box-shadow: 0px 1px 0px 0px #f0f7fa;
@@ -142,6 +150,8 @@ font-size: 7px;
 
 .btn-purchase{
     padding: 2rem 10rem;
+    
+    margin: auto;
     margin-top: 5rem;
 }
 

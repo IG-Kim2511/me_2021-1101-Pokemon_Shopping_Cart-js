@@ -27,6 +27,9 @@
       font-size: 70%;
     }
  
+    .cart-section{      
+      width: 755px;      
+    }
   }
   
   /* @ 576px */
@@ -34,15 +37,19 @@
     html {
       font-size: 55%;
     }
+    .cart-section{      
+      width: 540px;      
+    }
+
     .shop_items{
       flex-direction: column;
       width: 500px;
     }
 
     .shop_item{    
-      width: 350px;    
-      
+      width: 350px;          
       flex-direction: column;
+    }
+}
 
-  }
   
