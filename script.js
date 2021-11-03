@@ -2,22 +2,27 @@
 
 document.addEventListener('DOMContentLoaded',init);
 
+
+/* 🍄
+    🦄1102-4. e.target의 특정 자식노드찾기 : for loop + querySelector
+
+    (내가 한 다른 방식 : if(classList.contains('~'))로 클릭한 위치 찾음) 
+    
+    10 for loop 로 클릭한 위치 찾아낸 후
+    20 찾아낸 위치의 e.target으로  parent element 지정
+    30 parent element안의 clas 찾아내서, innerText, src 찾아냄
+*/
+
 function init() {
     
     // 🍖1102-4
    for (let i = 0; i < shopItemBtnAll.length; i++) {
     shopItemBtnAll[i].addEventListener('click',addToCartClicked);
    }
+
+   document.querySelector('.btn-purchase').addEventListener('click',purchaseClicked);
 }
 
-  /* 🍄
-    🦄1102-4. e.target의 특정 자식노드찾기 : for loop + querySelector
-
-    (내가 한 다른 방식 if(classList.contains('~'))) 
-    10 for loop 로 클릭한 위치 찾아냄
-    20 찾아낸 위치의 e.target으로  parent element 지정
-    30 parent element안의 clas 찾아내서, innerText, src 찾아냄
-*/
 
 /* 🍀1102-4 addToCartClicked*/
 function addToCartClicked(e){
@@ -41,7 +46,7 @@ function addToCartClicked(e){
 
 }
 
-//🍀1102-50 addItemToCart
+//🍀1102-20 addItemToCart
 function addItemToCart(title,price,imgSrc) {
 
     let cartRow = document.createElement('div')
@@ -99,17 +104,38 @@ function updateCartTotal() {
 
     //🦄parseFloat(~).toFixed(~), 소수점 ~자리까지
     total = parseFloat(total).toFixed(2)
-    
+
      document.querySelector('.cart-total-price').innerText = "$" + total;
     
 }
 
 // removeCartItem
-function removeCartItem(params) {
-    console.log('object')
+function removeCartItem(e) {
+    e.target.parentElement.parentElement.remove()
+    updateCartTotal();
 }
 
 // quantityChanged
-function quantityChanged(params) {
+function quantityChanged(e) {
+    
+    // 🦄isNaN(~) : number인지 확인
+    if (isNaN(e.target.value) || e.target.value <=0) {
+        e.target.value = 1;        
+    }
+    
+    updateCartTotal();
+}
+
+function purchaseClicked() {
+    
+    alert("Thank you");
+    
+    let cartItems = document.querySelector('.cart-items');
+    
+    while (cartItems.hasChildNodes()) {
+        cartItems.removeChild(cartItems.firstChild)        
+    }
+
+    updateCartTotal();
     
 }
